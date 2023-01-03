@@ -1,5 +1,5 @@
-.contenedor {
-    border: 5px solid #e1bee7;
+/* .contenedor {
+    /* border: 5px solid #e1bee7;
     background-color: #fff1ff;
     display: grid;
     grid-template-columns: 200px 200px;
@@ -10,12 +10,11 @@
     /* grid-template-rows:  150px 250px; */
     /* grid-template-rows: 100px 200px;
     /* grid-auto-columns: 100px; */
-    gap: 10px;
+    /* gap: 10px;  */
+/* } */
 
-}
-
-.item {
-    border: 5px solid #00bcd4;
+/* .item { */
+    /* border: 5px solid #00bcd4;
     font-size:  4rem;
     background-color: green;
     display: grid;
@@ -24,5 +23,106 @@
     /*alinea de forema vertical*/
     /* align-items: end; */
     /* place-item alinea en ambos sentidos */
-    place-items: end;
+    /* place-items: end; */
+
+    /* propiedades de ubicacion*/
+
+/* } */
+
+
+    /*-------------propiedades de ubicacion-------------*/
+/* .contenedor {
+    border: 5px solid #e1bee7;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 75px 75px 75px;
+    grid-template-areas: 
+        ' header header header'
+        'side main main'
+        'side main main';
+    place-content: center;
+}
+
+.item {
+    font-size: 4rem;
+} */
+
+/* este va a quedar como un header */
+/* .item-1 {
+    border: 5px solid #f8bbd0;
+    background-color:  #ffeeff;
+    /* el numero hace referencia a la linea en l;a que va a empezar, en este caso va a ir a la primera */
+    /* grid-column-start: 1; */
+    /* es de 4 pq hace referencia a la linea de la columna y como queremos que quede como encabezado pues debemos ocupar hasta la ultima liena de la fila  */
+    /* grid-column-end: 4; */
+    /* grid-area: header
+} */ 
+
+/*este va a quedar cubriendo dos filas*/
+/* .item-2 {
+    border: 5px solid #e1bee7;
+    background-color:  #fff1ff; */
+    /*en este caso, la celda ya se encuentra en la linea 2 de la fila por lo que empezaremos por ahi (2) y el nuemero 4 hace referancia a las lineas que queremos que ocupe por lo que 2(linea en la que inicia)/4(linea en la que finaliza)*/
+    /* grid-row: 2/4; */
+    /* grid-area: side;
+} */
+
+/* este esta ubicado en filas y columnas */
+/* .item-3 {
+    border: 5px solid #b2ebf2;
+    background-color:  #e5ffff; */
+    /* usaremos grid area
+    fila en la que comienza 
+    columna en la que comienza
+    fila en la que termina 
+    columna en la que termina
+    y los valores que recibe son  respecto a la linea  (horizontal o vertical, segun corresponda)
+     */
+    /* grid-area: 2/2/4/4; */
+    /* grid-area: main;
+} */
+
+
+    /*-------------Funciones especiales-------------*/
+    
+    /* el problema planteado aqui es que nuestras celdas no son responsivas, tanto si cambiamos el tama;o de la ventana como si le agregamos texto que exceda el tama;o de cada celda en particular, podemos observar que en ambos casos no se comporta de manera responsiva el contenedor que hemos agregado, para ello ultiliszremos la funcion minmax() */
+/* .contenedor {
+    border: 5px solid #e1bee7;
+    background-color: pink;
+    display: grid;
+    /* aqui agreregamos a la funcion minmax() los parametros que queremos que tangaan nuestras columnas */
+    /* grid-template-columns:minmax(30px, 300px) 200px minmax(60px, 250px); */
+    /* sin embago habia un problema al reajustar la ventana pues las filas se rmantenian fijas en un tama;o para eso usamos el auto y agregamos la funcion repeat(), simplemente para hacer mas corto el codigo (el 3 representa el numero de filas que existen)*/
+    /* grid-template-rows: repeat(3, auto); 
+ } */
+
+/* .item {
+    border: 5px solid #00bcd4;
+    font-size: 2rem;
+} */ 
+
+/*----------------keyword especailes----------------*/
+
+.contenedor {
+    border: 5px solid #e1bee7;
+    background-color: pink;
+    display: grid;
+    /* uso de fracciones */
+    /* auto-fit : Ensancha las columnas para que ocupen todo el espacio del contenedor. */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+.contenedor-2 {
+    margin-top: 100px;
+    border: 5px solid #e1bee7;
+    background-color: pink;
+    display: grid;
+    /* uso de fracciones */
+    /* auto-fill : Agrega columnas “fantasma” que rellenan el espacio sobrante del contenedor. */
+    grid-template-columns: repeat(auto-fill,  minmax(100px, 1fr));
+}
+
+.item {
+    border: 5px solid #00bcd4;
+    font-size: 2rem;
 }
